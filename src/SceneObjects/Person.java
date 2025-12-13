@@ -4,6 +4,7 @@ import Interfaces.Combatant;
 import Interfaces.Hideble;
 import Interfaces.Moveble;
 import Interfaces.Thinkable;
+import Exceptions.SckrepyMissmatchException;
 
 public class Person extends Entity implements Combatant, Moveble, Thinkable, Hideble {
     private final Sex sex;
@@ -12,6 +13,7 @@ public class Person extends Entity implements Combatant, Moveble, Thinkable, Hid
 
     public Person(String name, Sex sex) {
         super(name);
+        if(sex == Sex.Other) throw new SckrepyMissmatchException();
         this.sex = sex;
         this.pet = null;
     }
