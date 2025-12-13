@@ -21,7 +21,7 @@ public class Detective extends Person implements Hunter {
     }
 
     public Entity getPrey() {
-        return prayList.getFirst().copy();
+        return prayList.peek().copy();
     }
 
     public void removePray() {
