@@ -42,31 +42,37 @@ public class Person extends Entity implements Combatant, Moveble, Thinkable, Hid
 
     @Override
     public String figthWith(Entity o) {
+        objectAdjectives.add("is in fight");
         return toString() + " сражается с " + o.toString();
     }
 
     @Override
     public String moveTo(Entity obj) {
+        objectAdjectives.add("is moving");
         return toString() + " движется к " + obj.toString();
     }
 
     @Override
     public String moveTo(CompassDirection direction) {
+        objectAdjectives.add("is moving");
         return toString() + " движется в направлении " + direction.getTitle();
     }
 
     @Override
     public String think(Entity o) {
+        objectAdjectives.add("thinks");
         return toString() + " думает о " + o.toString();
     }
 
     @Override
     public String hide(Entity e) {
+        objectAdjectives.add("hides");
         return toString() + " спрятал " + e.toString();
     }
 
     @Override
     public String hide() {
+        objectAdjectives.add("hides itself");
         return toString() + " спраятался ";
     }
 
@@ -95,7 +101,7 @@ public class Person extends Entity implements Combatant, Moveble, Thinkable, Hid
 
     @Override
     public boolean equals(Object obj) {
-         if (this == obj) return true;
+        if (this == obj) return true;
         if (getClass() != obj.getClass()) return false;
         return (super.equals((Entity) obj));
     }

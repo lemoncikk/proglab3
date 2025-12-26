@@ -1,5 +1,7 @@
 package SceneObjects;
 
+import java.util.ArrayList;
+
 public abstract class Entity {
     private static long next_id = 0;
     protected final long id;
@@ -8,7 +10,7 @@ public abstract class Entity {
        this.name = name;
        this.id = next_id++;
     }
-
+    protected ArrayList<String> objectAdjectives;
     protected Entity(Entity o) {
         this.name = o.name;
         this.id = next_id++;
@@ -34,6 +36,6 @@ public abstract class Entity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         var e = (Entity)o;
-        return (id == e.id && name.equals(e.name));
+        return (id == e.id);
     }
 }

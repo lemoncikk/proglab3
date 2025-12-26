@@ -9,6 +9,7 @@ public class Dog extends Pet implements Hunter {
 
     @Override
     public String chase(Entity e) {
+        objectAdjectives.add("chases");
         return toString() + " преслудует " + e.name;
     }
 
