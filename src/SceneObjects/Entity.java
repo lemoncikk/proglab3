@@ -14,6 +14,7 @@ public abstract class Entity {
     protected Entity(Entity o) {
         this.name = o.name;
         this.id = next_id++;
+        this.objectAdjectives = o.objectAdjectives;
     }
     public abstract String getName();
     public abstract Entity copy();

@@ -6,6 +6,14 @@ public class Dog extends Pet implements Hunter {
     public Dog(String name, Person owner) {
         super(name, owner);
     }
+    public Dog(Dog d) {
+        super(d);
+    }
+
+    @Override
+    public Dog copy() {
+        return new Dog(this);
+    }
 
     @Override
     public String chase(Entity e) {
