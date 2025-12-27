@@ -20,6 +20,8 @@ public class Dog extends Pet implements Hunter {
 
     @Override
     public boolean equals(Object o) {
+        if(this == o) return true;
+        if(getClass() != o.getClass()) return false;
         return super.equals(o);
     }
 

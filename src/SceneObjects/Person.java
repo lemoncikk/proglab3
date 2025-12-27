@@ -103,6 +103,6 @@ public class Person extends Entity implements Combatant, Moveble, Thinkable, Hid
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (getClass() != obj.getClass()) return false;
-        return (super.equals((Entity) obj));
+        return (super.equals(obj));
     }
 }

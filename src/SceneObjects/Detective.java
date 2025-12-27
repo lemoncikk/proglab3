@@ -3,6 +3,7 @@ package SceneObjects;
 import Exceptions.CantBeChasedException;
 import Interfaces.Hunter;
 
+import java.util.Objects;
 import java.util.Stack;
 
 public class Detective extends Person implements Hunter {
@@ -47,5 +48,18 @@ public class Detective extends Person implements Hunter {
             prayList.add(e);
         }
         return name + " и его собака по кличке " + ((Dog)getPet()).chase(getPrey());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Detective detective = (Detective) o;
+        return id == detective.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Long.hashCode(id);
     }
 }

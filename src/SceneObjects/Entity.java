@@ -6,11 +6,11 @@ public abstract class Entity {
     private static long next_id = 0;
     protected final long id;
     protected final String name;
+    protected ArrayList<String> objectAdjectives = new ArrayList<>();
     protected Entity(String name) {
        this.name = name;
        this.id = next_id++;
     }
-    protected ArrayList<String> objectAdjectives;
     protected Entity(Entity o) {
         this.name = o.name;
         this.id = next_id++;
@@ -34,7 +34,7 @@ public abstract class Entity {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Entity)) return false;
         var e = (Entity)o;
         return (id == e.id);
     }
